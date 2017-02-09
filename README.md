@@ -10,6 +10,12 @@ neo4j-import --into pathToSomewhere/databases/pick_a_name.db --id-type integer -
 - set the property `data.directories.data=pathToSomewhere`
 - set the property `dbms.active_database=pick_a_name.db`
 - start neo4j (`neo4j start`)
+- run the following cypher query (either in the console or webapp)
+```
+MATCH (p:Person)-[]->(o:Opinion)<-[:DISCUSSED_BY]-(t:Topic) 
+CALL dirty.opinion.set(p.id, o.id, t.id) 
+RETURN p.id, o.id, t.id
+```
 
 Notes:
 
