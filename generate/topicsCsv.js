@@ -4,7 +4,7 @@ const picker = require('./numberPicker');
 const topics = [
   'Hillary vs. Donald',
   'The TMT',
-  'Honolulu\'s Rail project',
+  "Honolulu's Rail project",
   'Visitor Drownings',
   'The Zika Virus',
   'The Houseless',
@@ -15,13 +15,13 @@ const topics = [
 ];
 
 module.exports = {
-  writer: function (pathToCsv) {
+  writer: function(pathToCsv) {
     const topicsCsv = fs.createWriteStream(pathToCsv);
 
     topicsCsv.write('id:ID(Topic),text,created:long\n');
 
     return {
-      write: (topicId) => {
+      write: topicId => {
         const text = topics[topicId];
         const created = picker.dateWithinYear();
 

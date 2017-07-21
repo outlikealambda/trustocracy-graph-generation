@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-  writer: function (pathToCsv) {
+  writer: function(pathToCsv) {
     const authoredCsv = fs.createWriteStream(pathToCsv);
 
     authoredCsv.write(':TYPE,id:START_ID(Person),id:END_ID(Opinion)\n');

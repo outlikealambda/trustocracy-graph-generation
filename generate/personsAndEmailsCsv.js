@@ -19,7 +19,7 @@ hasEmailsCsv.write(':TYPE,:START_ID(Person),:END_ID(Email)\n');
 
 Array(nodeCount)
   .fill(1)
-  .map(() => Object.assign({name: generateName({ random: Math.random })}))
+  .map(() => Object.assign({ name: generateName({ random: Math.random }) }))
   .forEach((person, index) => {
     const email = person.name.replace(' ', '.').toLowerCase() + '@gmail.com';
     personsCsv.write(`${index},${person.name}\n`);

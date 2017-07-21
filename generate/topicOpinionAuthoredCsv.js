@@ -4,7 +4,14 @@ const opinionsCsv = require('./opinionsCsv');
 const authoredCsv = require('./authoredCsv');
 const discussesCsv = require('./discussesCsv');
 
-function go (topicCount, opinionRange, personCount, topicsPath, opinionsPath, authoredPath) {
+function go(
+  topicCount,
+  opinionRange,
+  personCount,
+  topicsPath,
+  opinionsPath,
+  authoredPath
+) {
   const topicsWriter = topicsCsv.writer(topicsPath || 'topics.csv');
   const opinionsWriter = opinionsCsv.writer(topicsPath || 'opinions.csv');
   const authoredWriter = authoredCsv.writer(topicsPath || 'authored.csv');

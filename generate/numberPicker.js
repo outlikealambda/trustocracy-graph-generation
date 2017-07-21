@@ -1,12 +1,14 @@
-function lessThan (exclusiveMax) {
+function lessThan(exclusiveMax) {
   return range(0, exclusiveMax);
 }
 
-function range (inclusiveMin, exclusiveMax) {
-  return inclusiveMin + Math.floor(Math.random() * (exclusiveMax - inclusiveMin));
+function range(inclusiveMin, exclusiveMax) {
+  return (
+    inclusiveMin + Math.floor(Math.random() * (exclusiveMax - inclusiveMin))
+  );
 }
 
-function excluding (exclusiveMax, excluded) {
+function excluding(exclusiveMax, excluded) {
   var id;
 
   do {
@@ -16,7 +18,7 @@ function excluding (exclusiveMax, excluded) {
   return id;
 }
 
-function dateWithinYear () {
+function dateWithinYear() {
   const today = new Date();
   const aYearAgo = today.setFullYear(today.getFullYear() - 1);
 
